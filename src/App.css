@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #F9F9F9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid lightgray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.icon-logo {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid lightgray;
 }
 
-.App-link {
-  color: #61dafb;
+.icon-logo p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon-logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.header-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+
+.question-container {
+  padding: 1.5rem;
+  /* background-color: lightgray; */
+}
+
+.question {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0.3rem 4px 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.question-title {
+  margin: 1.5rem 0;
+}
+
+.question p {
+  font-size: 1.3rem;
+}
+
+.question-choice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5rem 0 0 0;
+}
+
+.question-detail {
+  border-top: 1px solid lightgray;
+  margin-top: 1.5rem;
+}
+
+.question-detail p.add-choice {
+  color: #FF5C00;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.duplicate-delete {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid lightgray;
+  padding-top: 1rem;
+}
+
+.duplicate-delete p {
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.add-choice {
+  margin-bottom: 0.5rem;
+}
+
+.helperText {
+  font-size: 0.25rem;
+  display: inline;
 }
