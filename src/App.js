@@ -137,7 +137,7 @@ export default function App() {
           element.isChecked = true;
         } else element.isChecked = false;
       });
-      console.log(radioBtn);
+      // console.log(radioBtn);
       return radioBtn;
     });
   }
@@ -244,7 +244,6 @@ export default function App() {
 
       <div className="question-container">
         <div className="question">
-          <form>
             <p>Questionnaire Detail</p>
             <TextField
               error={!question.isQuestionDetailValidated}
@@ -425,7 +424,6 @@ export default function App() {
             >
               add question
             </Button>
-          </form>
         </div>
       </div>
     </div>
