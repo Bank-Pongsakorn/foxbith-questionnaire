@@ -13,7 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import { Typography } from "@mui/material";
 
 export default function App() {
-  // Set Initail State!
+  // Set Initial State!
   const [question, setQuestion] = useState({
     questionDetail: "",
     isQuestionDetailValidated: true,
@@ -29,8 +29,7 @@ export default function App() {
             isChecked: true,
             isQuestionChoiceValidated: true,
           },
-        ],
-        // isQuestionsValidated: true,
+        ],        
       },
     ],
   });
@@ -49,7 +48,7 @@ export default function App() {
     });
   }
 
-  // Function for Delete Choice
+  // Function for Delete Question
   function handleDeleteQuestion(index) {
     setQuestion((prev) => {
       const deleteQuestion = { ...prev };
@@ -97,8 +96,7 @@ export default function App() {
   function onChangeQuestionnaireDetail(value) {
     setQuestion((prev) => {
       const newQuestionnaireDetail = { ...prev };
-      newQuestionnaireDetail.questionDetail = value;
-      // console.log("questionnaire detail =", value);
+      newQuestionnaireDetail.questionDetail = value;      
       return newQuestionnaireDetail;
     });
   }
@@ -119,10 +117,6 @@ export default function App() {
       newChoiceText.questions[index].questionChoice[
         choiceIndex
       ].choiceDescription = value;
-      // console.log(
-      //   "🚀 ~ file: App.js ~ line 131 ~ setQuestion ~ newChoiceText.questions[index].questionChoice[choiceIndex]",
-      //   newChoiceText.questions[index].questionChoice[choiceIndex]
-      // );
       return newChoiceText;
     });
   }
@@ -131,31 +125,18 @@ export default function App() {
   function handleRadioButton(index, choiceIndex) {
     setQuestion((prev) => {
       const radioBtn = { ...prev };
-      radioBtn.questions[index].questionChoice.forEach((element, index) => {
-        // console.log('ele', element, 'choiceIndex', choiceIndex, 'index', index)
+      radioBtn.questions[index].questionChoice.forEach((element, index) => {        
         if (index === choiceIndex) {
           element.isChecked = true;
         } else element.isChecked = false;
-      });
-      // console.log(radioBtn);
+      });      
       return radioBtn;
     });
   }
 
-  // Function for Validation
-
-  // function validationFunc() {
-  //   handleValidation();
-  //   onSubmit();
-  // }
-
   function handleValidation() {
     setQuestion((prev) => {
       const formValidation = { ...prev };
-      // console.log(formValidation.isQuestionDetailValidated)
-      // if (!formValidation.questionDetail) {
-      //   formValidation.isQuestionDetailValidated = false;
-      // } else formValidation.isQuestionDetailValidated = true;
       formValidation.isQuestionDetailValidated =
         !!formValidation.questionDetail;
 
@@ -174,20 +155,6 @@ export default function App() {
       return formValidation;
     });
   }
-
-  // function onSubmit() {
-  //   setQuestion((prev) => {
-  //     const onSubmit = { ...prev };
-  //     onSubmit.questions.forEach(element => {
-  //       element.questionChoice.forEach(value => {
-  //         if(onSubmit.isQuestionDetailValidated && element.isQuestionsValidated && value.isQuestionChoiceValidated) {
-  //           console.log(onSubmit);
-  //         }
-  //       })
-  //     })
-  //     return onSubmit;
-  //   })
-  // }
 
   // Function handle cancel
   function handleCancel() {
@@ -210,7 +177,6 @@ export default function App() {
         },
       ],
     });
-    // console.log(question)
     return question;
   }
 
